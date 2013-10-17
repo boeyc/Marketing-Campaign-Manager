@@ -1,6 +1,6 @@
 Soxform::Application.routes.draw do
   resources :forms
-
+  root :to => 'forms#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
