@@ -1,0 +1,37 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  sox_number: MyString
+  program_name: MyString
+  start_date: 2013-10-16
+  end_date: 2013-10-16
+  tobacco_class: MyString
+  brand: MyString
+  targeted_stores: MyString
+  budget: 9.99
+  mechanism: MyString
+  rationale: MyString
+  kpi: MyString
+  actions: MyString
+  par: MyString
+  lar: MyString
+  status: MyString
+  comments: MyString
+
+two:
+  sox_number: MyString
+  program_name: MyString
+  start_date: 2013-10-16
+  end_date: 2013-10-16
+  tobacco_class: MyString
+  brand: MyString
+  targeted_stores: MyString
+  budget: 9.99
+  mechanism: MyString
+  rationale: MyString
+  kpi: MyString
+  actions: MyString
+  par: MyString
+  lar: MyString
+  status: MyString
+  comments: MyString

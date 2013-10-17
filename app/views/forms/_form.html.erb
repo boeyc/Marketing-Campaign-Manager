@@ -1,0 +1,104 @@
+<%= form_for @form, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :sox_number, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :sox_number, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :program_name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :program_name, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :start_date, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.date_select :start_date, :class => 'date_select' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :end_date, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.date_select :end_date, :class => 'date_select' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :tobacco_class, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :tobacco_class, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :brand, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :brand, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :targeted_stores, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :targeted_stores, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :budget, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :budget, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :mechanism, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :mechanism, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :rationale, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :rationale, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :kpi, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :kpi, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :actions, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :actions, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :par, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :par, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :lar, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :lar, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :status, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :status, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :comments, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :comments, :class => 'text_field' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                forms_path, :class => 'btn' %>
+  </div>
+<% end %>
