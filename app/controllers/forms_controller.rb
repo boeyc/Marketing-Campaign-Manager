@@ -2,6 +2,8 @@ class FormsController < ApplicationController
   # GET /forms
   # GET /forms.json
   def index
+
+
     @forms = Form.all
 
     respond_to do |format|

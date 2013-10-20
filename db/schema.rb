@@ -15,9 +15,9 @@ ActiveRecord::Schema.define(:version => 20131017025330) do
 
   create_table "forms", :force => true do |t|
     t.string   "sox_number"
-    t.string   "program_name"
-    t.date     "start_date"
-    t.date     "end_date"
+    t.string   "name"
+    t.date     "start_at"
+    t.date     "end_at"
     t.string   "tobacco_class"
     t.string   "brand"
     t.string   "targeted_stores"

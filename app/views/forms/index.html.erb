@@ -1,3 +1,4 @@
+
 <%- model_class = Form -%>
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
@@ -7,9 +8,9 @@
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:sox_number) %></th>
-      <th><%= model_class.human_attribute_name(:program_name) %></th>
-      <th><%= model_class.human_attribute_name(:start_date) %></th>
-      <th><%= model_class.human_attribute_name(:end_date) %></th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:start_at) %></th>
+      <th><%= model_class.human_attribute_name(:end_at) %></th>
       <th><%= model_class.human_attribute_name(:tobacco_class) %></th>
       <th><%= model_class.human_attribute_name(:brand) %></th>
       <th><%= model_class.human_attribute_name(:targeted_stores) %></th>
@@ -30,10 +31,10 @@
     <% @forms.each do |form| %>
       <tr>
         <td><%= link_to form.id, form_path(form) %></td>
-        <td><%= form.sox_number %></td>
-        <td><%= form.program_name %></td>
-        <td><%= form.start_date %></td>
-        <td><%= form.end_date %></td>
+        <td><%= link_to form.sox_number, form_path(form) %></td>
+        <td><%= form.name %></td>
+        <td><%= form.start_at %></td>
+        <td><%= form.end_at %></td>
         <td><%= form.tobacco_class %></td>
         <td><%= form.brand %></td>
         <td><%= form.targeted_stores %></td>
