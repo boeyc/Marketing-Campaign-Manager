@@ -19,7 +19,7 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
 end
-
+gem "paperclip", "~> 3.0"
 gem 'simple_form'
 gem "twitter-bootstrap-rails"
 gem 'jquery-rails'

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131017025330) do
+ActiveRecord::Schema.define(:version => 20131020124847) do
 
   create_table "forms", :force => true do |t|
     t.string   "sox_number"
@@ -30,8 +30,19 @@ ActiveRecord::Schema.define(:version => 20131017025330) do
     t.string   "lar"
     t.string   "status"
     t.string   "comments"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
+    t.string   "province"
+    t.string   "printable_sox_form_file_name"
+    t.string   "printable_sox_form_content_type"
+    t.integer  "printable_sox_form_file_size"
+    t.datetime "printable_sox_form_updated_at"
+  end
+
+  create_table "provinces", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end
