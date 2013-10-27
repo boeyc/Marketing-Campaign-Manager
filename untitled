@@ -1,0 +1,4 @@
+  <%= f.simple_fields_for :par_results do |par_result| %>
+    <%= render 'par_result_fields', :f => par_result %>
+      <% end %>
+      <%= link_to_add_association "Add PAR", f, :par_result %>

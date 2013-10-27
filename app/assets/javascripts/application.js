@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.ui.datepicker
+//= require cocoon
 //= require twitter/bootstrap
 //= require_tree .
 /*
@@ -66,3 +67,17 @@ Event.observe(window, "load", function() {
     });
   });
 });
+
+// tabs
+$('#myTab a[href=#main"]').click(function (e) {
+  e.preventDefault()
+  $(this).tab('show')
+})
+$('#myTab a[href=#par_result"]').click(function (e) {
+  e.preventDefault()
+  $(this).tab('show')
+})
+$('#myTab a[href=#execution"]').click(function (e) {
+  e.preventDefault()
+  $(this).tab('show')
+})

@@ -1,0 +1,20 @@
+
+<div class="nested-fields">
+<p>
+  <%= f.input :province, :collection => Form::BO_PR , :as => :check_boxes, item_wrapper_class: 'inline' %>
+  <%= f.input :tobacco_class, :collection => Form::BO_CLASS, :as => :radio_buttons, item_wrapper_class: 'inline' %>
+  <%= f.input :brand %>
+  <%= f.input :targeted_stores %>
+  <%= f.input :budget %>
+  <%= f.input :mechanism %>
+  <%= f.input :rationale %>
+  <%= f.input :kpi %>
+  <%= f.input :actions %>
+  <%= f.input :par,     as: :radio_buttons, item_wrapper_class: 'inline' %>
+  <%= f.input :lar,     as: :radio_buttons, item_wrapper_class: 'inline' %>
+  <%= f.input :status %>
+  <%= f.input :comments %>
+  <%= f.input :printable_sox_form, label: 'SOX Form PDF file:' , input_html: {accept: ('application/pdf') },:class => 'btn-primary'  %>
+
+</p>
+</div>

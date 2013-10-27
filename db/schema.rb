@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131020124847) do
+ActiveRecord::Schema.define(:version => 20131026042026) do
 
   create_table "forms", :force => true do |t|
     t.string   "sox_number"
@@ -37,6 +37,19 @@ ActiveRecord::Schema.define(:version => 20131020124847) do
     t.string   "printable_sox_form_content_type"
     t.integer  "printable_sox_form_file_size"
     t.datetime "printable_sox_form_updated_at"
+  end
+
+  create_table "par_results", :force => true do |t|
+    t.integer  "form_id"
+    t.integer  "spend"
+    t.integer  "incremental_cartons"
+    t.integer  "lift_percent"
+    t.integer  "incremental_margin"
+    t.integer  "roi"
+    t.string   "overall_score"
+    t.string   "comments"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
   end
 
   create_table "provinces", :force => true do |t|

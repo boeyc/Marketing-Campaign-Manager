@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  form_id: 1
+  spend: 1
+  incremental_cartons: 1
+  lift_percent: 1
+  incremental_margin: 1
+  roi: 1
+  overall_score: MyString
+  comments: MyString
+
+two:
+  form_id: 1
+  spend: 1
+  incremental_cartons: 1
+  lift_percent: 1
+  incremental_margin: 1
+  roi: 1
+  overall_score: MyString
+  comments: MyString
