@@ -57,7 +57,7 @@
     
     <%= f.simple_fields_for :program_types, :wrapper => 'inline' do |program_type| %>
     <%= render 'program_type_fields', :f => program_type, :render_options => { :wrapper => 'inline' } %>
-    <% end %>
+        <% end %>
 
    
     <%= link_to_add_association "Add Program Type", f, :program_types %>  

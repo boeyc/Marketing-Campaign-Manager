@@ -1,5 +1,5 @@
 class ProgramType < ActiveRecord::Base
-  attr_accessible :form_id, :name
+  attr_accessible :form_id, :name, :program_tasks_attributes
 
 
   has_many :program_tasks

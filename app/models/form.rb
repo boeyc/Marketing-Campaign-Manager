@@ -1,7 +1,7 @@
 
 class Form < ActiveRecord::Base
   attr_accessible :actions, :brand, :budget, :comments, :end_at, :kpi, :lar, :mechanism, :par, :name, :rationale, :sox_number, :start_at, :status,
-  :targeted_stores, :tobacco_class, :province, :printable_sox_form, :program_types
+  :targeted_stores, :tobacco_class, :province, :printable_sox_form, :program_types_attributes, :program_tasks_attributes
 
   
 
