@@ -14,7 +14,7 @@ class Form < ActiveRecord::Base
 	has_many :province_forms
 	has_many :provinces, through: :province_forms
 	has_attached_file :printable_sox_form
-	has_one :par_result, :dependent => :destroy
-	accepts_nested_attributes_for :par_result, :reject_if => :all_blank, :allow_destroy => true
+	has_many :par_results
+	accepts_nested_attributes_for :par_results
 	accepts_nested_attributes_for :program_types
 end

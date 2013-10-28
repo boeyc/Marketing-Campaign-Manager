@@ -28,10 +28,15 @@ class FormsController < ApplicationController
   def new
     @form = Form.new
 
+    1.times {@form.par_results.build}
+
     1.times do
       program_types = @form.program_types.build
         4. times { program_types.program_tasks.build}
       end
+    
+
+
 
     respond_to do |format|
       format.html # new.html.erb

@@ -10,17 +10,11 @@
 </tr>
 </table>
 
-<table class="table table-striped"> 
 
-<tr>
-    <td><%= f.simple_fields_for :program_tasks, :wrapper => 'inline' do |program_task| %>
-    <%= render 'program_task_fields', :f => program_task %> <% end %></td>
-</tr>
-<tr>
-  <%= link_to_add_association "Add Program Tasks", f, :program_tasks, :class => "btn btn-primary" %> 
+<%= f.simple_fields_for :program_tasks, :wrapper => 'inline' do |program_task| %>
+    <%= render 'program_task_fields', :f => program_task %> <% end %>
+  <%= link_to_add_association "Add Program Tasks", f, :program_tasks, :data => {"association-insertion-node" => "this" }  %> 
 
-</tr>
-</table>
 </div>
   
 
