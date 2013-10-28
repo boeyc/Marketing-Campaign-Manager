@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131026042026) do
+ActiveRecord::Schema.define(:version => 20131028010552) do
 
   create_table "forms", :force => true do |t|
     t.string   "sox_number"
@@ -50,6 +50,20 @@ ActiveRecord::Schema.define(:version => 20131026042026) do
     t.string   "comments"
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
+  end
+
+  create_table "program_tasks", :force => true do |t|
+    t.string   "tasks"
+    t.integer  "program_type_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  create_table "program_types", :force => true do |t|
+    t.string   "name"
+    t.integer  "form_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "provinces", :force => true do |t|

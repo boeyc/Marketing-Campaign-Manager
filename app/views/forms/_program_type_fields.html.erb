@@ -1,0 +1,26 @@
+
+<div class="nested-fields">
+
+<table class="table table-striped"> 
+
+<tr>
+<td><%= f.input :name %> </td>
+<td><%= link_to_remove_association "Remove Program Type", f %> </td>
+</tr>
+</table>
+
+<table class="table table-striped"> 
+
+<tr>
+    <td><%= f.simple_fields_for :program_tasks, :wrapper => 'inline' do |program_task| %>
+    <%= render 'program_task_fields', :f => program_task %> <% end %></td>
+</tr>
+<tr>
+  <%= link_to_add_association "Add Program Tasks", f, :program_tasks, :class => "btn btn-primary" %> 
+
+</tr>
+</table>
+</div>
+  
+
+  

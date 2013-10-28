@@ -16,6 +16,11 @@
 //= require cocoon
 //= require twitter/bootstrap
 //= require_tree .
+//= require twitter/bootstrap/bootstrap-transition
+//= require twitter/bootstrap/bootstrap-alert
+//= require twitter/bootstrap/bootstrap-modal
+//= require twitter/bootstrap/bootstrap-button
+//= require twitter/bootstrap/bootstrap-collapse
 /*
  * Smart event highlighting
  * Handles for when events span rows, or don't have a background color
@@ -69,15 +74,64 @@ Event.observe(window, "load", function() {
 });
 
 // tabs
-$('#myTab a[href=#main"]').click(function (e) {
-  e.preventDefault()
-  $(this).tab('show')
-})
-$('#myTab a[href=#par_result"]').click(function (e) {
-  e.preventDefault()
-  $(this).tab('show')
-})
-$('#myTab a[href=#execution"]').click(function (e) {
-  e.preventDefault()
-  $(this).tab('show')
-})
+
+
+
+!function( $ ){
+
+  function activate ( element, container ) {
+    container
+      .find('> .active')
+      .removeClass('active')
+      .find('> .dropdown-menu > .active')
+      .removeClass('active')
+
+    element.addClass('active')
+
+    if ( element.parent('.dropdown-menu') ) {
+      element.closest('li.dropdown').addClass('active')
+    }
+  }
+
+  function tab( e ) {
+    var $this = $(this)
+      , $ul = $this.closest('ul:not(.dropdown-menu)')
+      , href = $this.attr('href')
+      , previous
+
+    if ( /^#\w+/.test(href) ) {
+      e.preventDefault()
+
+      if ( $this.parent('li').hasClass('active') ) {
+        return
+      }
+
+      previous = $ul.find('.active a').last()[0]
+      $href = $(href)
+
+      activate($this.parent('li'), $ul)
+      activate($href, $href.parent())
+
+      $this.trigger({
+        type: 'change'
+      , relatedTarget: previous
+      })
+    }
+  }
+
+
+ /* TABS/PILLS PLUGIN DEFINITION
+  * ============================ */
+
+  $.fn.tabs = $.fn.pills = function ( selector ) {
+    return this.each(function () {
+      $(this).delegate(selector || '.tabs li > a, .pills > li > a', 'click', tab)
+    })
+  }
+
+  $(document).ready(function () {
+    $('body').tabs('ul[data-tabs] li > a, ul[data-pills] > li > a')
+  })
+
+}( window.jQuery || window.ender );
+
