@@ -67,8 +67,7 @@
 
     <%= f.simple_fields_for :budget do |budget| %>
      <%= render 'budget_fields', :f => budget %>
-         <%= link_to_add_association "Add PAR", f, :budget, :data => {"association-insertion-node" => "this" } %>
-       <% end %>
+           <% end %>
    </div>
 
 
