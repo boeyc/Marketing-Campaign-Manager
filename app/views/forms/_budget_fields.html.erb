@@ -1,0 +1,22 @@
+
+<div class="nested-fields">
+
+<h3> 3. Budget Breakdown </h3>
+
+<%= f.input :total_budget %>
+<%= f.input :details, input_html: {style: 'height:300px;', class: 'span7'}, as: :text  %>
+<%= f.input :finance_approval, inline_label: 'Require Approval from Finance' %>
+<%= f.input :fund_source, label: 'Source of funds' %>
+<%= f.input :glwbsaction, label: 'GL, WBS, Action Details', input_html: {style: 'height:200px;', class: 'span7'}, as: :text %>
+
+<h3> 4. Method of Payment </h3>
+<%= f.input :method_of_payment, label: 'Details', input_html: {style: 'height:150px;', class: 'span7'}, as: :text %>
+
+<h3> 5. Additional Inventory Requirements </h3>
+
+<%= f.input :inventory, label: 'Details', input_html: {style: 'height:150px;', class: 'span7'}, as: :text %>
+
+
+</div>
+
+  

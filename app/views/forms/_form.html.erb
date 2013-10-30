@@ -11,27 +11,22 @@
 </script>  
 
 
-<%= simple_form_for(@form, :html => { :multipart => true}) do |f| %>
+<%= simple_form_for(@form, :html => {:class => "form-horizontal" }) do |f| %>
 
-<%= f.input :name,  :input_html => {:style => 'width: 100%'}, label: 'Program Name'  %>
+<%= f.input :name,  input_html: { class: 'span7' }, label: 'Program Name'  %>
 
-
-<table class="table table-striped"> 
-<tr>
-  <td><%= f.input :sox_number, label: 'SOX Number' %></td>
-      <td><%= f.input :start_at, :as => :datepicker %> </td>
-      <td><%= f.input :end_at, :as => :datepicker  %></td>
-       <td>   <%= f.input :status %> </td>
-</tr>
-</table>
-
-  
-
+<div class="form-inputs.row">
+  <%= f.input :sox_number, label: 'SOX Number', :wrapper_html => { :class => 'span2' }%>
+     <%= f.input :start_at, :as => :datepicker, :wrapper_html => { :class => 'span2' } %> 
+      <%= f.input :end_at, :as => :datepicker, :wrapper_html => { :class => 'span2' }  %>
+      <%= f.input :status, :wrapper_html => { :class => 'span6' } %> 
+</div>
 
 <ul class="nav nav-tabs" id="tabs">
-    <li class="active"><a href="#tab1" data-toggle="tab">Program Summary</a></li>
+    <li class="active"><a href="#tab1" data-toggle="tab">Program Overview</a></li>
     <li><a href="#tab2" data-toggle="tab">Execution</a></li>
-    <li><a href="#tab3" data-toggle="tab">PAR Upload</a></li>
+    <li><a href="#tab3" data-toggle="tab">Finance and Operations</a></li>
+    <li><a href="#tab4" data-toggle="tab">PAR Upload</a></li>
 </ul>
 
 
@@ -53,26 +48,38 @@
 
   <div class="tab-pane" id="tab2"> 
 
-
+    <h3> 1. The Strategic Plan and Execution </h3>
     
-    <%= f.simple_fields_for :program_types, :wrapper => 'inline' do |program_type| %>
-    <%= render 'program_type_fields', :f => program_type, :render_options => { :wrapper => 'inline' } %>
+    <%= f.simple_fields_for :program_types do |program_type| %>
+    <%= render 'program_type_fields', :f => program_type %>
      
     <%= link_to_add_association "Add Program Type", f, :program_types, :data => {"association-insertion-node" => "this" }  %>  
         <% end %>
 
+    <h3> 2. POS Material / Material Communication </h3>
+    <%= f.input :material, input_html: {style: 'height:300px;', class: 'span7'}, as: :text  %>
+
+
+
  </div>
-
-
-
-
-
 
   <div class="tab-pane" id="tab3">  
 
+    <%= f.simple_fields_for :budget do |budget| %>
+     <%= render 'budget_fields', :f => budget %>
+         <%= link_to_add_association "Add PAR", f, :budget, :data => {"association-insertion-node" => "this" } %>
+       <% end %>
+   </div>
 
-    <%= f.simple_fields_for :par_results, :wrapper => 'inline' do |par_result| %>
-    <%= render 'par_result_fields', :f => par_result, :render_options => { :wrapper => 'inline' } %>
+
+
+
+
+  <div class="tab-pane" id="tab4">  
+
+
+    <%= f.simple_fields_for :par_results do |par_result| %>
+    <%= render 'par_result_fields', :f => par_result %>
      
     <%= link_to_add_association "Add PAR", f, :par_results, :data => {"association-insertion-node" => "this" } %>
 
@@ -87,8 +94,5 @@
   </br><%= f.button :submit, :class => 'btn-primary' %>
   <%= f.button :submit, :class => 'btn-primary'
   submit_tag 'Cancel', :type => :reset, :class => "btn btn-danger" %>
-I am guessing this will stick at bottom
 
 <% end %>
-
-

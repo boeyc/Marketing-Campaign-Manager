@@ -2,20 +2,11 @@
 <div class="nested-fields">
 
 
-<table class="table table-striped"> 
+<%= f.input :name, input_html: {class: 'span7'}, label: 'Program Type'  %>
+<%= f.input :task, input_html: {style: 'height:300px;', class: 'span7'}, as: :text  %>
+<%= link_to_remove_association "Remove Program Type", f %> 
 
-<tr>
-<td><%= f.input :name %> </td>
-<td><%= link_to_remove_association "Remove Program Type", f %> </td>
-</tr>
-</table>
-
-
-<%= f.simple_fields_for :program_tasks, :wrapper => 'inline' do |program_task| %>
-    <%= render 'program_task_fields', :f => program_task %> <% end %>
-  <%= link_to_add_association "Add Program Tasks", f, :program_tasks, :data => {"association-insertion-node" => "this" }  %> 
 
 </div>
-  
 
   

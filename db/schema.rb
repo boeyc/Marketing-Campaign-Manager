@@ -11,7 +11,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131028010552) do
+ActiveRecord::Schema.define(:version => 20131030051100) do
+
+  create_table "budgets", :force => true do |t|
+    t.string   "details"
+    t.integer  "total_budget"
+    t.boolean  "finance_approval"
+    t.string   "fund_source"
+    t.string   "glwbsaction"
+    t.string   "method_of_payment"
+    t.string   "inventory"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+    t.integer  "form_id"
+  end
 
   create_table "forms", :force => true do |t|
     t.string   "sox_number"
@@ -37,6 +50,7 @@ ActiveRecord::Schema.define(:version => 20131028010552) do
     t.string   "printable_sox_form_content_type"
     t.integer  "printable_sox_form_file_size"
     t.datetime "printable_sox_form_updated_at"
+    t.string   "material"
   end
 
   create_table "par_results", :force => true do |t|
@@ -64,6 +78,7 @@ ActiveRecord::Schema.define(:version => 20131028010552) do
     t.integer  "form_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "task"
   end
 
   create_table "provinces", :force => true do |t|

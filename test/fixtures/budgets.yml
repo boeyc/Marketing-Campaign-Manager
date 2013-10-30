@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  details: MyString
+  total_budget: 1
+  finance_approval: false
+  fund_source: MyString
+  glwbsaction: MyString
+  method_of_payment: MyString
+  inventory: MyString
+
+two:
+  details: MyString
+  total_budget: 1
+  finance_approval: false
+  fund_source: MyString
+  glwbsaction: MyString
+  method_of_payment: MyString
+  inventory: MyString

@@ -1,7 +1,7 @@
 
 class Form < ActiveRecord::Base
   attr_accessible :actions, :brand, :budget, :comments, :end_at, :kpi, :lar, :mechanism, :par, :name, :rationale, :sox_number, :start_at, :status,
-  :targeted_stores, :tobacco_class, :province, :printable_sox_form, :program_types_attributes, :program_tasks_attributes
+  :targeted_stores, :tobacco_class, :province, :printable_sox_form, :program_types_attributes, :program_tasks_attributes, :material, :budget_attributes
 
   
 
@@ -10,6 +10,7 @@ class Form < ActiveRecord::Base
 	BO_CLASS = ["Cigarettes", "Fine Cut", "SNUS", "Other"]
 	BO_PR = ["BC","AB","MB","SK","ON","QC","NB","NS","NFLD","PEI"]
 
+	has_one :budget
 	has_many :program_types
 	has_many :province_forms
 	has_many :provinces, through: :province_forms
@@ -17,4 +18,5 @@ class Form < ActiveRecord::Base
 	has_many :par_results
 	accepts_nested_attributes_for :par_results
 	accepts_nested_attributes_for :program_types
+	accepts_nested_attributes_for :budget
 end
