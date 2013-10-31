@@ -9,6 +9,8 @@ class CreateBudgets < ActiveRecord::Migration
       t.string :method_of_payment
       t.string :inventory
 
+
+
       t.timestamps
     end
   end
