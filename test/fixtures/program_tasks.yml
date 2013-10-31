@@ -1,9 +1,0 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
-
-one:
-  tasks: MyString
-  program_type_id: 1
-
-two:
-  tasks: MyString
-  program_type_id: 1
