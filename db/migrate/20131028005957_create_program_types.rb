@@ -5,6 +5,7 @@ class CreateProgramTypes < ActiveRecord::Migration
       t.integer :form_id
       t.string :task
       t.timestamps
+      
     end
   end
 end
