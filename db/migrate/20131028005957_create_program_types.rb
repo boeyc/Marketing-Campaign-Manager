@@ -3,7 +3,7 @@ class CreateProgramTypes < ActiveRecord::Migration
     create_table :program_types do |t|
       t.string :name
       t.integer :form_id
-
+      t.string :task
       t.timestamps
     end
   end
