@@ -66,19 +66,12 @@ ActiveRecord::Schema.define(:version => 20131030051100) do
     t.datetime "updated_at",          :null => false
   end
 
-  create_table "program_tasks", :force => true do |t|
-    t.string   "tasks"
-    t.integer  "program_type_id"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
-  end
-
   create_table "program_types", :force => true do |t|
     t.string   "name"
     t.integer  "form_id"
+    t.string   "task"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-    t.string   "task"
   end
 
   create_table "provinces", :force => true do |t|
