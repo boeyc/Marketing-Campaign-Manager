@@ -53,6 +53,7 @@ class FormsController < ApplicationController
 
     respond_to do |format|
       if @form.save
+        
         format.html { redirect_to @form, notice: 'SOX Form was successfully created.' }
         format.json { render json: @form, status: :created, location: @form }
       else

@@ -4,48 +4,7 @@
 </div>
 
 <dl class="dl-horizontal">
-  <dt><strong>Date Range:</strong></dt>
-        <dd> <%= @form.start_at %> to <%= @form.end_at %> </dd>
-    </tr>
-  </table>
-  <dt><strong><%= model_class.human_attribute_name(:province) %>:</strong></dt>
-  <dd><%= @form.province %></dd>
 
-  <dt><strong><%= model_class.human_attribute_name(:sox_number) %>:</strong></dt>
-  <dd><%= @form.sox_number %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
-  <dd><%= @form.name %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:start_at) %>:</strong></dt>
-  <dd><%= @form.start_at %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:end_at) %>:</strong></dt>
-  <dd><%= @form.end_at %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:tobacco_class) %>:</strong></dt>
-  <dd><%= @form.tobacco_class %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:brand) %>:</strong></dt>
-  <dd><%= @form.brand %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:targeted_stores) %>:</strong></dt>
-  <dd><%= @form.targeted_stores %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:budget) %>:</strong></dt>
-  <dd><%= @form.budget %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:mechanism) %>:</strong></dt>
-  <dd><%= @form.mechanism %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:rationale) %>:</strong></dt>
-  <dd><%= @form.rationale %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:kpi) %>:</strong></dt>
-  <dd><%= @form.kpi %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:actions) %>:</strong></dt>
-  <dd><%= @form.actions %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:par) %>:</strong></dt>
-  <dd><%= @form.par %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:lar) %>:</strong></dt>
-  <dd><%= @form.lar %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:status) %>:</strong></dt>
-  <dd><%= @form.status %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:comments) %>:</strong></dt>
-  <dd><%= @form.comments %></dd>
-
-  <dt><strong><%= model_class.human_attribute_name(:printable_sox_form) %>:</strong></dt>
-  <dd><%= link_to @form.printable_sox_form_file_name, @form.printable_sox_form.url(:original, false) %></dd>
 </dl>
 
 <div class="form-actions">
