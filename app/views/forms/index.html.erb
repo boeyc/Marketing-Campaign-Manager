@@ -6,48 +6,25 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
+
       <th><%= model_class.human_attribute_name(:sox_number) %></th>
       <th><%= model_class.human_attribute_name(:name) %></th>
       <th><%= model_class.human_attribute_name(:start_at) %></th>
       <th><%= model_class.human_attribute_name(:end_at) %></th>
-      <th><%= model_class.human_attribute_name(:tobacco_class) %></th>
-      <th><%= model_class.human_attribute_name(:brand) %></th>
-      <th><%= model_class.human_attribute_name(:targeted_stores) %></th>
-      <th><%= model_class.human_attribute_name(:budget) %></th>
-      <th><%= model_class.human_attribute_name(:mechanism) %></th>
-      <th><%= model_class.human_attribute_name(:rationale) %></th>
-      <th><%= model_class.human_attribute_name(:kpi) %></th>
-      <th><%= model_class.human_attribute_name(:actions) %></th>
-      <th><%= model_class.human_attribute_name(:par) %></th>
-      <th><%= model_class.human_attribute_name(:lar) %></th>
       <th><%= model_class.human_attribute_name(:status) %></th>
-      <th><%= model_class.human_attribute_name(:comments) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+     <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
     <% @forms.each do |form| %>
       <tr>
-        <td><%= link_to form.id, form_path(form) %></td>
-        <td><%= link_to form.sox_number, form_path(form) %></td>
-        <td><%= form.name %></td>
+        <td><%= link_to form.sox_number, edit_form_path(form) %></td>
+        <td><%= link_to form.name,  form_path(form)   %></td>
         <td><%= form.start_at %></td>
         <td><%= form.end_at %></td>
-        <td><%= form.tobacco_class %></td>
-        <td><%= form.brand %></td>
-        <td><%= form.targeted_stores %></td>
-        <td><%= form.budget %></td>
-        <td><%= form.mechanism %></td>
-        <td><%= form.rationale %></td>
-        <td><%= form.kpi %></td>
-        <td><%= form.actions %></td>
-        <td><%= form.par %></td>
-        <td><%= form.lar %></td>
         <td><%= form.status %></td>
-        <td><%= form.comments %></td>
-        <td><%=l form.created_at %></td>
+       <td><%=l form.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_form_path(form), :class => 'btn btn-mini' %>

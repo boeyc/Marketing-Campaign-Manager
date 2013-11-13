@@ -27,11 +27,12 @@ class FormsController < ApplicationController
   # GET /forms/new.json
   def new
     @form = Form.new
-    @budget = @form.build_budget(params[:budget])
-    1.times {@form.par_results.build}
+   
+
     1.times {@form.program_types.build}
+    1.times {@form.key_performance_indicators.build}
 
-
+    @budget = @form.build_budget(params[:budget])
 
 
     respond_to do |format|
@@ -52,7 +53,7 @@ class FormsController < ApplicationController
 
     respond_to do |format|
       if @form.save
-        format.html { redirect_to @form, notice: 'Form was successfully created.' }
+        format.html { redirect_to @form, notice: 'SOX Form was successfully created.' }
         format.json { render json: @form, status: :created, location: @form }
       else
         format.html { render action: "new" }
@@ -68,7 +69,7 @@ class FormsController < ApplicationController
 
     respond_to do |format|
       if @form.update_attributes(params[:form])
-        format.html { redirect_to @form, notice: 'Form was successfully updated.' }
+        format.html { redirect_to @form, notice: 'SOX Form was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

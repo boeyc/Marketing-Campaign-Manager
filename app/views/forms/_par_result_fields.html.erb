@@ -1,16 +1,15 @@
 
 <div class="nested-fields">
-<p>
-	  <%= f.input :incremental_cartons %><br />
-	  <%= f.input :spend %><br />
 
-  	  <%= f.input :lift_percent %><br />
-  	  <%= f.input :incremental_margin %><br />
-  	  <%= f.input :roi %><br />
-  	  <%= f.input :overall_score %><br />
-  	  <%= f.input :comments %><br />
-
+	  <%= f.input :par_version, label:"PAR Version Name" %>	
+	  <%= f.input :incremental_cartons %>
+	  <%= f.input :spend %>
+  	  <%= f.input :lift_percent %>
+  	  <%= f.input :incremental_margin %>
+  	  <%= f.input :roi %>
+  	  <%= f.input :overall_score %>
+  	  <%= f.input :comments %>
+  	  <%= f.input :par_link %>
 <%= link_to_remove_association "Remove PAR", f %>
 
-</p>
 </div>

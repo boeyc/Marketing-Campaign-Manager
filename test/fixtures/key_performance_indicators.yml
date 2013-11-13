@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  kpi: MyString
+  kpi_followup: false
+  form_id: 1
+  comments: MyString
+
+two:
+  kpi: MyString
+  kpi_followup: false
+  form_id: 1
+  comments: MyString

@@ -1,9 +1,16 @@
 <%- model_class = Form -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+  <h1><%= @form.sox_number %> <%= @form.name %></h1>
 </div>
 
 <dl class="dl-horizontal">
+  <dt><strong>Date Range:</strong></dt>
+        <dd> <%= @form.start_at %> to <%= @form.end_at %> </dd>
+    </tr>
+  </table>
+  <dt><strong><%= model_class.human_attribute_name(:province) %>:</strong></dt>
+  <dd><%= @form.province %></dd>
+
   <dt><strong><%= model_class.human_attribute_name(:sox_number) %>:</strong></dt>
   <dd><%= @form.sox_number %></dd>
   <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>

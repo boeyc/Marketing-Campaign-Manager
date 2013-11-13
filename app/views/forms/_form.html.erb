@@ -19,14 +19,17 @@
   <%= f.input :sox_number, label: 'SOX Number', :wrapper_html => { :class => 'span2' }%>
      <%= f.input :start_at, :as => :datepicker, :wrapper_html => { :class => 'span2' } %> 
       <%= f.input :end_at, :as => :datepicker, :wrapper_html => { :class => 'span2' }  %>
-      <%= f.input :status, :wrapper_html => { :class => 'span6' } %> 
+      <%= f.input :status, :collection => Form::FORM_STATUS, :wrapper_html => { :class => 'span6' } %> 
 </div>
 
 <ul class="nav nav-tabs" id="tabs">
     <li class="active"><a href="#tab1" data-toggle="tab">Program Overview</a></li>
     <li><a href="#tab2" data-toggle="tab">Execution</a></li>
     <li><a href="#tab3" data-toggle="tab">Finance and Operations</a></li>
-    <li><a href="#tab4" data-toggle="tab">PAR Upload</a></li>
+    <li><a href="#tab4" data-toggle="tab">KPI</a></li>
+    <li><a href="#tab5" data-toggle="tab">Follow Up Requirements</a></li>
+    <li><a href="#tab6" data-toggle="tab">PAR Upload</a></li>
+    <li><a href="#tab7" data-toggle="tab">LAR Upload</a></li>
 </ul>
 
 
@@ -35,7 +38,10 @@
 
 
   <div class="tab-pane active" id="tab1"> 
-  <%= f.input :province, :collection => Form::BO_PR , :as => :check_boxes, item_wrapper_class: 'inline' %>
+  
+  <h3> Program Overview </h3>
+
+  <%= f.input :province, :collection => Form::BO_PR , :as => :check_boxes,  :wrapper_html => { :style => 'display: inline' }%>
   <%= f.input :tobacco_class, :collection => Form::BO_CLASS, :as => :radio_buttons, item_wrapper_class: 'inline' %>
   <%= f.input :brand %>
   <%= f.input :targeted_stores %>
@@ -71,18 +77,54 @@
    </div>
 
 
-
-
-
   <div class="tab-pane" id="tab4">  
+
+
+  <h3> 6. KPI </h3>
+
+
+    <%= f.simple_fields_for :key_performance_indicators do |key_performance_indicator| %>
+    <%= render 'key_performance_indicator_fields', :f => key_performance_indicator %>
+    <% end %>
+
+      <%= link_to_add_association "Add KPI", f, :key_performance_indicators, :data => {"association-insertion-node" => "this" } %>
+   </div>
+
+
+
+  <div class="tab-pane" id="tab5">  
+
+
+  <h3> 7. Requirements </h3>
+
+  <%= f.input :par_requirement, inline_label: 'PAR Required' %>
+  <%= f.input :par, label: 'PAR Details', input_html: {style: 'height:150px;', class: 'span7'}, as: :text %>
+  <%= f.input :lar_requirement, inline_label: 'LAR Required' %>
+  <%= f.input :lar, label: 'LAR Details', input_html: {style: 'height:150px;', class: 'span7'}, as: :text %>
+
+
+   </div>
+
+  <div class="tab-pane" id="tab6">  
 
 
     <%= f.simple_fields_for :par_results do |par_result| %>
     <%= render 'par_result_fields', :f => par_result %>
      
+       <% end %>
     <%= link_to_add_association "Add PAR", f, :par_results, :data => {"association-insertion-node" => "this" } %>
 
-      <% end %>
+
+    
+
+   </div>
+
+  <div class="tab-pane" id="tab7">  
+
+  <%= f.input :lar1, label: 'LAR #1 Link', input_html: {class: 'span7'}%>
+  <%= f.input :lar2, label: 'LAR #2 Link', input_html: {class: 'span7'}%>
+  <%= f.input :lar3, label: 'LAR #3 Link', input_html: {class: 'span7'}%>
+    
 
    </div>
 

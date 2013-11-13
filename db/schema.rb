@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131030051100) do
+ActiveRecord::Schema.define(:version => 20131107060638) do
 
   create_table "budgets", :force => true do |t|
     t.string   "details"
@@ -51,6 +51,19 @@ ActiveRecord::Schema.define(:version => 20131030051100) do
     t.integer  "printable_sox_form_file_size"
     t.datetime "printable_sox_form_updated_at"
     t.string   "material"
+    t.boolean  "lar_requirement"
+    t.boolean  "par_requirement"
+    t.string   "lar1"
+    t.string   "lar2"
+    t.string   "lar3"
+  end
+
+  create_table "key_performance_indicators", :force => true do |t|
+    t.string   "kpi"
+    t.string   "kpi_followup"
+    t.integer  "form_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "par_results", :force => true do |t|
@@ -64,6 +77,8 @@ ActiveRecord::Schema.define(:version => 20131030051100) do
     t.string   "comments"
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
+    t.string   "par_version"
+    t.string   "par_link"
   end
 
   create_table "program_types", :force => true do |t|
