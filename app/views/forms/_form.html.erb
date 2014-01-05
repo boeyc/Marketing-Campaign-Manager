@@ -8,7 +8,7 @@
   })
 
 
-</script>  
+</script>
 
 
 <%= simple_form_for(@form, :html => {:class => "form-horizontal" }) do |f| %>
@@ -17,9 +17,9 @@
 
 <div class="form-inputs.row">
   <%= f.input :sox_number, label: 'SOX Number', :wrapper_html => { :class => 'span2' }%>
-     <%= f.input :start_at, :as => :datepicker, :wrapper_html => { :class => 'span2' } %> 
+     <%= f.input :start_at, :as => :datepicker, :wrapper_html => { :class => 'span2' } %>
       <%= f.input :end_at, :as => :datepicker, :wrapper_html => { :class => 'span2' }  %>
-      <%= f.input :status, :collection => Form::FORM_STATUS, :wrapper_html => { :class => 'span6' } %> 
+      <%= f.input :status, :collection => Form::FORM_STATUS, :wrapper_html => { :class => 'span6' } %>
 </div>
 
 <ul class="nav nav-tabs" id="tabs">
@@ -34,15 +34,15 @@
 
 
 <div class="tab-content">
-  
 
 
-  <div class="tab-pane active" id="tab1"> 
-  
+
+  <div class="tab-pane active" id="tab1">
+
   <h3> Program Overview </h3>
 
   <%= f.input :province, :collection => Form::BO_PR , :as => :check_boxes,  :wrapper_html => { :style => 'display: inline' }%>
-  <%= f.input :tobacco_class, :collection => Form::BO_CLASS, :as => :radio_buttons, item_wrapper_class: 'inline' %>
+  <%= f.input :tobacco_class, :collection => Form::BO_CLASS, :as => :radio_buttons, item_wrapper_class: 'inline', label: 'Product Type'  %>
   <%= f.input :brand %>
   <%= f.input :targeted_stores %>
   <%= f.input :printable_sox_form, label: 'Upload Target List' , input_html: {accept: ('application/pdf') },:class => 'btn-primary'  %>
@@ -52,14 +52,14 @@
 
 
 
-  <div class="tab-pane" id="tab2"> 
+  <div class="tab-pane" id="tab2">
 
     <h3> 1. The Strategic Plan and Execution </h3>
-    
+
     <%= f.simple_fields_for :program_types do |program_type| %>
     <%= render 'program_type_fields', :f => program_type %>
-     
-    <%= link_to_add_association "Add Program Type", f, :program_types, :data => {"association-insertion-node" => "this" }  %>  
+
+    <%= link_to_add_association "Add Program Type", f, :program_types, :data => {"association-insertion-node" => "this" }  %>
         <% end %>
 
     <h3> 2. POS Material / Material Communication </h3>
@@ -69,7 +69,7 @@
 
  </div>
 
-  <div class="tab-pane" id="tab3">  
+  <div class="tab-pane" id="tab3">
 
     <%= f.simple_fields_for :budget do |budget| %>
      <%= render 'budget_fields', :f => budget %>
@@ -77,7 +77,7 @@
    </div>
 
 
-  <div class="tab-pane" id="tab4">  
+  <div class="tab-pane" id="tab4">
 
 
   <h3> 6. KPI </h3>
@@ -92,7 +92,7 @@
 
 
 
-  <div class="tab-pane" id="tab5">  
+  <div class="tab-pane" id="tab5">
 
 
   <h3> 7. Requirements </h3>
@@ -105,26 +105,26 @@
 
    </div>
 
-  <div class="tab-pane" id="tab6">  
+  <div class="tab-pane" id="tab6">
 
 
     <%= f.simple_fields_for :par_results do |par_result| %>
     <%= render 'par_result_fields', :f => par_result %>
-     
+
        <% end %>
     <%= link_to_add_association "Add PAR", f, :par_results, :data => {"association-insertion-node" => "this" } %>
 
 
-    
+
 
    </div>
 
-  <div class="tab-pane" id="tab7">  
+  <div class="tab-pane" id="tab7">
 
   <%= f.input :lar1, label: 'LAR #1 Link', input_html: {class: 'span7'}%>
   <%= f.input :lar2, label: 'LAR #2 Link', input_html: {class: 'span7'}%>
   <%= f.input :lar3, label: 'LAR #3 Link', input_html: {class: 'span7'}%>
-    
+
 
    </div>
 

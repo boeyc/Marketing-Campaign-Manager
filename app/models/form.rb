@@ -8,7 +8,7 @@ class Form < ActiveRecord::Base
 
   has_event_calendar
 
-	BO_CLASS = ["Cigarettes", "Fine Cut", "SNUS", "Other"]
+	BO_CLASS = ["Toys", "Models", "Other"]
 	BO_PR = ["BC","AB","MB","SK","ON","QC","NB","NS","NF","PEI"]
 	FORM_STATUS = ["Approved", "In Progress", "Cancelled"]
 
